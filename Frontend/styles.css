@@ -1,0 +1,421 @@
+
+/* 1. Centra el bloque completo en la pantalla sin centrar el texto interno */
+#whole-form {
+    max-width: 800px; /* Define un ancho para el formulario */
+    margin: 2em auto;   /* Centra la caja completa horizontalmente */
+    text-align: left; /* Garantiza que todo el contenido se alinee a la izquierda */
+    /* border: 1px solid #423e3e; */
+    border-radius: 10%;
+    padding: 1em 2em 4em 1em;
+    font-family: Lato, sans-serif;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    background: rgb(255, 255, 255);
+}
+
+/* 2. Alinea las secciones internas */
+.container {
+    display: flex;
+    gap: 20px;          /* Espacio entre 'Title' y 'Publishing Date' */
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+/* Makes inputs have the same font as the HTML*/
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: 1rem;       
+    box-sizing: border-box;     
+    max-width: 100%;
+    font-weight: 350;
+}
+
+#date-form {
+    width: 37%;
+}
+
+#page-title, 
+#page-subtitle {
+    text-align: left;
+    font-family: Lato, sans-serif;
+    margin-left: 1em; 
+}
+
+#page-subtitle {
+    margin-left: 1.3em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+}
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Hace que el label y el input comiencen a la izquierda */
+}
+
+.form {
+    width: 27em;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 50px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 3px solid #3030309d;
+    background:rgba(223, 221, 221, 0.3);
+}
+
+.form:hover, #button:hover, .form:active {
+    border-color: rgba(0, 0, 0, 0.781);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);   /* Sombra más marcada */
+    
+}
+
+#msg {
+    resize: none;
+    height: 120px;
+    width: 740px;
+}
+
+.button {
+    margin-top: 25px;
+    width: 100%;
+}
+
+#button-publish,
+#button-edit, 
+#button-panel {
+    border-radius: 10px;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+    border: 0.2em solid #e0e0e0;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: large;
+    background-color: cornflowerblue;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color:aliceblue;
+}
+
+/* Shared styles for Panel and Add Article buttons */
+#panel,
+#header-add a {
+    display: inline-block;
+    padding: 6px 18px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    color: #ffffff;
+    border: 2px solid #e0e0e0;  /* Light gray outline */
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover state: Border turns black without vertical movement */
+#panel:hover,
+#header-add a:hover {
+    border-color: #000000;
+    transform: none;
+    box-shadow: none;
+}
+
+
+#button-publish,
+#button-edit {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: cornflowerblue;
+    padding: 20px 40px;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#header-title {
+    color: aliceblue;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none; 
+    transition: opacity 0.2s;
+}
+
+#header-title:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#header-menu {
+    margin-top: 10px;
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: 3em auto; 
+    padding: 0 20px; 
+}
+
+.article-info {
+    margin-bottom: 1.5em;
+    text-align: left; 
+    padding-left: 2em;
+}
+
+.article-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: #222;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.publishing-date {
+    color: #666; 
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.article-content { 
+    padding: 2.5em;
+    line-height: 1.8; 
+    font-size: 18px;
+    color: #333;
+    background-color: #fff;
+    
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+}
+
+#data { 
+    margin: 0; 
+    white-space: pre-wrap; 
+    text-align: justify;
+}
+
+hr {
+    border: none;                             
+    border-top: 1px solid #e0e0e0;            
+    margin: 0.5rem auto;    
+    width: 92%;
+    align-content: center;
+}
+
+body {
+    background: #f4f4f5; /* Un gris un poco más limpio y sólido */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato, sans-serif;
+}
+
+#list {
+    padding: 0px 40px;    
+}
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 20px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5)
+}
+
+.publishing-date-list {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.list-h3 {
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+    transition: opacity 1s, text-shadow 0.2s;
+}
+
+.list-redirect:visited {
+    color: cornflowerblue;
+}
+
+.list-redirect:link {
+    color: cornflowerblue;
+}
+
+.list-redirect:hover {
+    opacity: 0.8;
+    text-shadow: 0px 10px 20px rgba(98, 120, 192, 0.05);
+}
+
+#sub-menu {
+    width: 100%;
+    position: absolute;
+    left: 71%;
+    width: 320px;
+    background: cornflowerblue;
+    border-radius: 10px; 
+    margin: 10px 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+#sub-menu.open-menu{
+    max-height: 450px;
+}
+
+.panel-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+}
+
+.panel-info svg {
+    width: 80px;
+    height: 80px;
+}
+
+#panel-form {
+   padding: 5px 20px; 
+}
+
+.panel-button {
+    margin-bottom: 15px;
+}   
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 10px;
+    margin-right: 1em;
+}
+
+/* Container Spacing */
+.list-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Individual Article Layout */
+.article-card {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    grid-template-rows: auto auto;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px dashed #cccccc; 
+}
+
+/* Title Styling */
+.list-h3 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 0 0 0.4rem 0;
+    font-size: 2rem;
+}
+
+.list-redirect {
+    color: #639ef5; /* Matches header blue */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.list-redirect:hover {
+    color: #4b88e0;
+}
+
+/* Date Styling */
+.publishing-date-list {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: #333333;
+    font-size: 0.95rem;
+}
+
+/* Right-aligned Buttons Container */
+.article-actions {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3; /* Spans both rows to align vertically with title and date */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between Edit and Delete */
+}
+
+/* Base Admin Button Style */
+.admin-btn {
+    display: inline-block;
+    padding: 6px 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #639ef5; /* Theme blue fill */
+    border: 2px solid #e0e0e0; /* Light gray outline in default state */
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Edit button specific fill */
+.admin-btn:not(.btn-delete) {
+    background-color: #0f6cf8;
+}
+.admin-btn:hover {
+    border-color: #000000; 
+    background-color:#6169d3;
+}
+
+/* Delete button specific fill */
+.admin-btn.btn-delete {
+    background-color: #0f6cf8;
+}
+.admin-btn.btn-delete:hover {
+    border-color: #000000;
+    background-color: #db5555f1; 
+}
+
+/* publish and access button animations*/
+#button-panel,
+#button-edit,
+#button-publish {
+    transition: border-color 0.2s ease-in-out;
+}
+
+#button-panel:hover,
+#button-edit:hover,
+#button-publish:hover {
+    border-color: #000000;
+}
+
+/* Empty State Message */
+.empty-list {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="/admin" id="header-title">my blog</a>
+        
+        <nav class="nav-bar">
+            <div id="header-add">
+                <a href="/add-article">add article</a>
+            </div>               
+        </nav>
+
+    </header>
+    
+    <div id="whole-form">
+
+        <div class="title">
+            <h1 id="page-title">Edit Article</h1>
+            <h2 id="page-subtitle">Change the fields you wish</h2>
+            <hr id="hr">
+        </div>
+
+        <form action="/update-article/<%= article.id %>" method="post">
+            
+            <section class="container">
+                <div class="form-container" id="title-form">
+                    <p>Title:</p>
+                    <input type="text" id="title" class="form" name="article_title" minlength="1" maxlength="50" value="<%= article.articleTitle %>">
+                </div>    
+                
+                <div class="form-container" id="date-form">
+                    <p>Publishing Date:</p>
+                    <input type="date" id="date" class="form" name="publishing_date" value="<%= article.articleDate %>">
+                </div>
+            </section>      
+
+            <section class="container">
+                <div class="form-container" id="content-form">
+                    <p>Article Content:</p>
+                    <textarea id="msg" name="article_content" class="form" minlength="1" maxlength="500"> <%=article.articleContent %> </textarea>       
+                </div>
+            </section>
+            
+            <div class="panel-button">
+                <button id="button-edit" type="submit">Publish</button>
+            </div>
+        </form>        
+    </div>
+
+    <script src="/toggleMenu.js" defer></script>
+</body>
+</html>

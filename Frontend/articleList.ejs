@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+    <body>
+        
+    <header class="header">
+        <a href="/" id="header-title">my blog</a>
+
+        <div id="header-menu">
+            <div id="panel">panel</div>
+        </div>
+    </header>
+
+    <div id="sub-menu">
+        <div class="panel-info">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">  
+                <path d="M256 160C256 124.7 284.7 96 320 96C351.7 96 378 119 383.1 149.3C386 166.7 402.5 178.5 420 175.6C437.5 172.7 449.2 156.2 446.3 138.7C436.1 78.1 383.5 32 320 32C249.3 32 192 89.3 192 160L192 224C156.7 224 128 252.7 128 288L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 288C512 252.7 483.3 224 448 224L256 224L256 160z"/>
+            </svg>
+            <h3 class="panel-info">access the admin panel</h3> 
+        </div>
+
+        <hr>
+
+        <form action="/login" method="post" id="panel-form">
+            <p>user:</p>
+            <input type="text" id="user" name="username" class="form panel" required>
+            
+            <p>password:</p>
+            <input type="text" id="password" name="password" class="form panel" required>
+
+            <div class="button panel-button">
+                <button id="button-panel" type="submit">access</button>
+            </div>
+        </form>
+
+    </div>
+
+    <main class="list-container">
+        
+        <% if (articles && articles.length > 0) { %>
+            <div id="list">
+                <% for (let i = 0; i < articles.length; i++) { %>
+                    <article class="article-card">
+                        <h3 class="list-h3"> 
+                            <a class="list-redirect" href="/article/<%= articles[i].id %>" >
+                            <%= articles[i].title %> </a>
+                        </h3>
+                        <span class="publishing-date-list"> <%= articles[i].date %> </span>
+                    
+                    </article>
+                <% } %> 
+            </div>
+        <% } else { %>
+            <p class="empty-list">There is nothing to read yet.</p>
+        <% } %>
+
+        </main>
+    
+    <script src="/toggleMenu.js" defer></script>
+
+    </body>
+</html>
