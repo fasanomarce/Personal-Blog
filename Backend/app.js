@@ -25,10 +25,10 @@ app.use(express.static(path.join(__dirname, '../Frontend')));
 
 // Session middleware
 app.use(session({
-    secret: 'secretpass123', // Clave para firmar la cookie
-    resave: false,                           // Evita guardar la sesión si no hubo cambios
-    saveUninitialized: false,                // Evita crear sesiones vacías
-    cookie: { maxAge: 3600000 }              // Tiempo de vida de la sesión (ej: 1 hora)
+    secret: 'secretpass123', 
+    resave: false,                           
+    saveUninitialized: false,                
+    cookie: { maxAge: 3600000 }              
 }));
 
 // Setting up the view engine
