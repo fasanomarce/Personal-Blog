@@ -1,4 +1,4 @@
-# Personal-Blog
+# my blog
 
 Simple blogging website
 
